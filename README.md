@@ -15,25 +15,25 @@
 
 В сообщение об успешном заказе и в письмо добавить ссылку на оплату:
 ```
-<$if $.session.shk_pay_link$>
+{if $.session.shk_pay_link}
     <br><br>
-    <a class="button" target="_blank" href="<$$.session.shk_pay_link$>">Оплатить заказ</a>
-<$/if$>
+    <a class="button" target="_blank" href="{$.session.shk_pay_link}">Оплатить заказ</a>
+{/if}
 ```
 
 или редирект:
 ```
-<$if $.session.shk_pay_link$>
-    <script>window.open('<$$.session.shk_pay_link$>', '_blank');</script>
-<$/if$>
+{if $.session.shk_pay_link}
+    <script>window.open('{$.session.shk_pay_link}', '_blank');</script>
+{/if}
 ```
 
 Вывод ошибок (для Сбербанка):
 ```
-<$if $.session.shk_pay_error$>
+{if $.session.shk_pay_error}
     <br><br>
-    <div class="error"><$$.session.shk_pay_error$></div>
-<$/if$>
+    <div class="error">{$.session.shk_pay_error}</div>
+{/if}
 ```
 
 
